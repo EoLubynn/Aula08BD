@@ -1,0 +1,36 @@
+============================================================
+FICHA DE ENTREGA DA ATIVIDADE - BANCO DE DADOS & SUPABASE
+============================================================
+Aluno(a): Rian Miguel de Paulo
+Tema Atribuído: Tema 27 - Confeitaria Artesanal & Doces Finos
+Vídeo de Demonstração (YouTube): https://youtu.be/nHTkHZFKDL8?si=IBQ-496pHXggwMcp
+============================================================
+
+-- [Missão 1: Projeção & Aliases]
+SELECT
+  nome_doce AS "Sobremesa Artesanal",
+  rendimento_fatias AS "Rendimento (Fatias/Unidades)"
+FROM doces_confeitaria
+
+-- [Missão 2: Transformação Aritmética]
+SELECT
+  nome_doce,
+  preco_venda,
+  (preco_venda - custo_ingredientes) as "Margem de Lucro"
+FROM doces_confeitaria
+
+-- [Missão 3: Filtro com WHERE e Lógica]
+SELECT
+  nome_doce,
+  preco_venda,
+  contem_glutem
+FROM doces_confeitaria
+WHERE preco_venda >= 50.00 AND contem_glutem = FALSE
+
+-- [Missão 4: Lapidação (ORDER BY e LIMIT)]
+SELECT
+  nome_doce,
+  preco_venda,
+  rendimento_fatias
+FROM doces_confeitaria
+ORDER BY rendimento_fatias DESC LIMIT 2;
